@@ -11,6 +11,7 @@ import android.content.Context;
 
 public class MyApplication extends Application {
 
+
     /** 全局上下文 */
     private static Context _context;
 

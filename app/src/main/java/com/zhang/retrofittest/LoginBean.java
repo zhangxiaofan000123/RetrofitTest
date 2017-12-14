@@ -32,4 +32,5 @@ public class LoginBean {
                 ", user=" + user +
                 '}';
     }
+
 }
