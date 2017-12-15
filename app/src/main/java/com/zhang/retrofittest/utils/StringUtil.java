@@ -1,4 +1,4 @@
-package com.zhang.retrofittest;
+package com.zhang.retrofittest.utils;
 
 /**
  * Created by 29495 on 2017/11/2.

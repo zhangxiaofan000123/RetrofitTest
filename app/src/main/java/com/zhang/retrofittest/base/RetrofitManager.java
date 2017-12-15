@@ -1,6 +1,9 @@
-package com.zhang.retrofittest;
+package com.zhang.retrofittest.base;
 
 import android.util.Log;
+
+import com.zhang.retrofittest.LoginBean;
+import com.zhang.retrofittest.MyApplication;
 
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
@@ -33,7 +36,7 @@ public class RetrofitManager {
      *
      * @return
      */
-    protected static Retrofit getRetrofit() {
+    public static Retrofit getRetrofit() {
 
         if (null == mRetrofit) {
 
@@ -42,7 +45,7 @@ public class RetrofitManager {
                         .readTimeout(30, TimeUnit.SECONDS)
                         .connectTimeout(10, TimeUnit.SECONDS)
                         .writeTimeout(30, TimeUnit.SECONDS)
-//                        .cookieJar(new CookiesManager(MyApplication.getContext()))
+                        .cookieJar(new CookiesManager(MyApplication.getContext()))
                         .retryOnConnectionFailure(false)
                         .addNetworkInterceptor(new Interceptor() {
                             @Override
@@ -62,11 +65,12 @@ public class RetrofitManager {
                                 return chain.proceed(authorised);
                             }
                         })
+//                        .addNetworkInterceptor(new ErrorHandlerInterceptor()) 可以拿到返回的response
                         .build();
             }
             mRetrofit = new Retrofit.Builder()
                     .baseUrl(API_SERVER + "/")
-                    .addConverterFactory(GsonConverterFactory.create())
+                    .addConverterFactory(MyGsonConverterFactory.create())
                     .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                     .client(mOkHttpClient)
                     .build();

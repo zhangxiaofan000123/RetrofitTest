@@ -1,5 +1,7 @@
 package com.zhang.retrofittest;
 
+import com.zhang.retrofittest.utils.StringUtil;
+
 import java.util.List;
 
 /**

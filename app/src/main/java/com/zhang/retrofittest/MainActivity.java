@@ -7,6 +7,8 @@ import android.view.View;
 
 import com.zhang.retrofittest.base.PageData;
 import com.zhang.retrofittest.base.Result;
+import com.zhang.retrofittest.base.RetrofitManager;
+import com.zhang.retrofittest.utils.RetrofitUtils;
 
 import java.util.List;
 
@@ -54,14 +56,14 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void testInterface(LoginBean data) {
-//        testDiagnosisList();
-//        testDiagnosisPageList(); //500 status 大小写？
-//        testUserList(data); //403
-//        testUserPageList(data);//403
-//        testLogout();//403
-//        testUserModel(data); //403
-//        testEditUserModel(data); //404
-//        testAlarmList(data); //获取数据成功但是不知道那个设备报警
+        testDiagnosisList();
+//        testDiagnosisPageList();
+//        testUserList(data);
+//        testUserPageList(data);
+//        testUserModel(data);
+//        testEditUserModel(data);
+//        testAlarmList(data);
+//        testLogout(); 注意不要和其他接口一起使用。
     }
 
     private void testAlarmList(LoginBean data) {

@@ -1,4 +1,4 @@
-package com.zhang.retrofittest;
+package com.zhang.retrofittest.utils;
 
 import android.annotation.SuppressLint;
 import android.content.Context;

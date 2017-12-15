@@ -1,9 +1,14 @@
-package com.zhang.retrofittest;
+package com.zhang.retrofittest.utils;
 
 import android.support.annotation.NonNull;
 import android.util.Log;
 
 import com.google.gson.Gson;
+import com.zhang.retrofittest.Alarm;
+import com.zhang.retrofittest.DiagnosisApplyModel;
+import com.zhang.retrofittest.LoginBean;
+import com.zhang.retrofittest.base.RetrofitManager;
+import com.zhang.retrofittest.UserModel;
 import com.zhang.retrofittest.base.PageData;
 import com.zhang.retrofittest.base.Param;
 import com.zhang.retrofittest.base.Result;
@@ -85,7 +90,7 @@ public class RetrofitUtils {
         Observable<Result<UserModel>> getUserModelGet(@Header(API_TOKEN) String api_token,
                                                       @Query("id") String id);
 
-        @POST("account/users/edit")
+        @POST("api/account/users/edit")
         Observable<Result> ediUserModelPost(@Body RequestBody route);
 
         @GET("api/alarm/list")
@@ -131,7 +136,7 @@ public class RetrofitUtils {
                                             int page, int pageSize, String order, Observer<Result<PageData<DiagnosisApplyModel>>> observer) {
 
         Map<String, String> headerMap = new HashMap<>();
-        String api_token = NetworkUtils.getSign(new Param("status", Status), new Param("Name", Identification));
+        String api_token = NetworkUtils.getSign(new Param("Status", Status), new Param("Name", Identification));
         String api_ranges = "page=" + page + ";" + "size=" + pageSize + ";" + "order=" + (order == null ? "asc" : order);
         headerMap.put(API_TOKEN, api_token);
         headerMap.put(API_RANGES, api_ranges);
