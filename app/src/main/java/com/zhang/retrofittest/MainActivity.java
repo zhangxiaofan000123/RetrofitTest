@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
 //        testDiagnosisPageList();
 //        testUserList(data);
 //        testUserPageList(data);
-//        testUserModel(data);
+        testUserModel(data);
 //        testEditUserModel(data);
 //        testAlarmList(data);
 //        testLogout(); 注意不要和其他接口一起使用。

@@ -86,6 +86,7 @@ public class RetrofitUtils {
         @POST("api/account/logout")
         Observable<Result> logoutPost();
 
+        //用户信息返回数组
         @GET("api/account/users")
         Observable<Result<UserModel>> getUserModelGet(@Header(API_TOKEN) String api_token,
                                                       @Query("id") String id);
